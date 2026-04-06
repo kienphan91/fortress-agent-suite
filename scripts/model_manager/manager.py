@@ -26,5 +26,5 @@ if __name__ == "__main__":
     token_file = SECRET_DIR / 'openrouter.token'
     if token_file.exists():
         key = token_file.read_text().strip()
-        # Giả sử đã quét và chọn model từ available_models.json
+        # Giả sử đã quét và chọn model từ available_models.json / assume we already scanned and selected a model from available_models.json
         update_9router_config(key, "google/gemini-2.0-flash-lite:free", "Gemini 2.0 Flash Lite")

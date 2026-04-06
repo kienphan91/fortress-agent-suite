@@ -16,10 +16,10 @@ def check():
     try:
         subprocess.check_call(['openclaw', 'gateway', 'status'], timeout=5)
     except:
-        msg = "Meo meo! Hệ thống Gateway bị down. Đào đang tự động restore và restart!"
+        msg = "Meo meo! Gateway is down. Đào is auto-restoring/restarting now!"
         send_telegram(msg)
         import restore
         restore.run_restore()
-        send_telegram("Hệ thống đã phục hồi thành công.")
+        send_telegram("System recovered successfully.")
 
 if __name__ == "__main__": check()

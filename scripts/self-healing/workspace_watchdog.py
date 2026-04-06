@@ -7,7 +7,7 @@ def check_integrity():
     if (WORKSPACE / '.git').exists():
         status = subprocess.check_output(['git', '-C', str(WORKSPACE), 'status', '--porcelain']).decode()
         if status:
-            # Nếu có thay đổi chưa commit, tự động commit (backup kiểu git)
+            # If there are uncommitted changes, auto-commit them (backup mode) / Nếu có thay đổi chưa commit, tự động commit (backup kiểu git)
             os.system(f"git -C {WORKSPACE} add . && git -C {WORKSPACE} commit -m 'Auto-backup: {os.popen('date').read().strip()}'")
 
     # Kiểm tra crontab
