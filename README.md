@@ -1,44 +1,23 @@
 # Fortress Agent Suite
 
-**Fortress** là bộ công cụ tối ưu cho các OpenClaw agent trong môi trường production, cung cấp khả năng tự phục hồi (self-healing), giám sát hệ thống và bảo mật chủ động.
+**Fortress** is a production-grade suite for OpenClaw agents, providing self-healing, system monitoring, and proactive security hardening.
 
-## ⚠️ Security & Privilege Warning
-**IMPORTANT**: This suite operates with high privileges. It requires access to:
-- `/root/.openclaw/` (configuration, workspace, secrets).
-- Ability to modify `crontab` and execute system commands (`openclaw gateway restart`, `git`, `pip`).
-- Network access to ClawHub and GitHub APIs to self-update or install new skills.
-**Use only in trusted environments.**
-
-## Features
-- 🛡️ **Self-Healing**: Automatic gateway recovery.
-- 🩺 **Health Monitoring**: Disk/RAM watchdog.
-- ⚙️ **Automated Maintenance**: Auto-cron enforcement and workspace Git-sync.
-- 🤖 **Model Manager**: Automated LLM provider configuration.
+> ⚠️ **SECURITY ALERT - HIGH PRIVILEGE TOOL**
+> **This suite operates with root-level access and requires a trusted environment.**
+> It is designed for production Odoo/OpenClaw setups and performs autonomous system modifications (Crontab, Git, Gateway restarts, and auto-skill installation). **Do not install unless you own and trust the underlying workspace.**
 
 ---
 
-# Fortress Agent Suite (English)
+## 🛠 Features
+- 🛡️ **Self-Healing**: Automatic gateway recovery and backup restoration.
+- 🩺 **Health Monitoring**: Disk, RAM, and system watchdog services.
+- ⚙️ **Automated Maintenance**: Auto-cron enforcement and Git-sync for workspace integrity.
+- 🤖 **Model Manager**: Autonomous management of LLM providers for 9Router.
 
-**Fortress** is a production-grade suite for OpenClaw agents, providing self-healing, system monitoring, and proactive security hardening.
-
-## ⚠️ Security & Privilege Warning
-**IMPORTANT**: This suite requires elevated system privileges:
-- Direct access to `/root/.openclaw/` (config, workspace, and secrets).
-- Permission to modify `crontab`, restart system services, and execute shell commands (`git`, `pip`).
-- Network access for autonomous skill installation and API interaction.
-**Please deploy in trusted environments only.**
-
-## Key Features
-- 🛡️ **Self-Healing**: Detects gateway downtime, restores from latest backup, and restarts.
-- 🩺 **Health Monitoring**: Automated disk/RAM watchdogs and log rotation.
-- ⚙️ **Automated Maintenance**: Ensures critical cron jobs remain active and performs automated Git-sync for workspace integrity.
-- 🤖 **Model Manager**: Autonomous management of LLM providers and model configuration for 9Router.
-
-## Installation
-1. Clone the repository into your OpenClaw `skills/` directory.
-2. Install dependencies: `pip install psutil`.
-3. Apply the `crontab_template.txt` to your system crontab.
-4. Set up your API tokens in `/root/.openclaw/secrets/`.
+## 🚀 Deployment Requirements
+1. **Trusted Environment Only**: Only install in environments where you have full control and trust.
+2. **Dependencies**: `pip install psutil`.
+3. **Setup**: Apply `crontab_template.txt`.
 
 ## License
 MIT
